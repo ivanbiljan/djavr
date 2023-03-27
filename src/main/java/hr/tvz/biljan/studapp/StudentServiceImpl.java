@@ -26,7 +26,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Optional<StudentDto> addStudent(StudentCommand studentCommand) {
-        if (studentRepository.findAll().stream().anyMatch(s -> s.getUid() == studentCommand.getUid())) {
+        if (studentRepository.findAll().stream().anyMatch(s -> s.getUid().equals(studentCommand.getUid()))) {
             return Optional.empty();
         }
 

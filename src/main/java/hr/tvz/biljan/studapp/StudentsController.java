@@ -34,7 +34,7 @@ public final class StudentsController {
     }
 
     @PostMapping
-    public ResponseEntity<StudentDto> add(@Valid final StudentCommand studentCommand) {
+    public ResponseEntity<StudentDto> add(@Valid @RequestBody final StudentCommand studentCommand) {
         return studentService.addStudent(studentCommand)
                 .map(
                         studentDto -> new ResponseEntity<>(studentDto, HttpStatus.CREATED)
