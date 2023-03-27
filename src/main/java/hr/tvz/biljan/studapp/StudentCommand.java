@@ -1,5 +1,7 @@
 package hr.tvz.biljan.studapp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +13,7 @@ public final class StudentCommand {
      */
     @Getter
     @Setter
+    @NotBlank(message = "First name must not be empty")
     private String firstName;
 
     /**
@@ -18,6 +21,7 @@ public final class StudentCommand {
      */
     @Getter
     @Setter
+    @NotBlank(message = "Last name must not be empty")
     private String lastName;
 
     /**
@@ -25,6 +29,8 @@ public final class StudentCommand {
      */
     @Getter
     @Setter
+    @JsonFormat(pattern = "dd.MM.yyyy")
+    @Past(message = "Date of birth must be in the past")
     private LocalDate dateOfBirth;
 
     /**
@@ -32,6 +38,8 @@ public final class StudentCommand {
      */
     @Getter
     @Setter
+    @NotBlank(message = "UID must not be empty")
+    @Pattern(regexp = "\\d{8,10}", message = "UID must be 8-10 digits long")
     private String uid;
 
     /**
@@ -39,13 +47,7 @@ public final class StudentCommand {
      */
     @Getter
     @Setter
+    @PositiveOrZero(message = "Number of ECTS points must be greater than or equal to zero")
+    @Max(value = 300, message = "ECTS points must not exceed 300")
     private int ectsPoints;
-
-    public Student(String firstName, String lastName, LocalDate dateOfBirth, String uid, int ectsPoints) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.uid = uid;
-        this.ectsPoints = ectsPoints;
-    }
 }

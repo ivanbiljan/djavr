@@ -9,5 +9,9 @@ public interface StudentRepository {
     List<Student> findAll();
 
     Optional<Student> findStudentByJmbag(String jmbag);
+
+    void addStudent(Student student);
+
+    void removeStudent(Student student);
 }
 

@@ -9,4 +9,8 @@ public interface StudentService {
     List<StudentDto> findAll();
 
     Optional<StudentDto> findStudentByJmbag(String jmbag);
+
+    Optional<StudentDto> addStudent(StudentCommand studentCommand);
+
+    boolean deleteByJmbag(String jmbag);
 }
