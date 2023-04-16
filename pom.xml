@@ -57,6 +57,11 @@
             <artifactId>spring-webmvc</artifactId>
             <version>6.0.6</version>
         </dependency>
+        <dependency>
+            <groupId>net.sizovs</groupId>
+            <artifactId>pipelinr</artifactId>
+            <version>0.8</version>
+        </dependency>
     </dependencies>
 
     <build>
