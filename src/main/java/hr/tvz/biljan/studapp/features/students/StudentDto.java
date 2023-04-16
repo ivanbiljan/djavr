@@ -1,8 +1,8 @@
-package hr.tvz.biljan.studapp;
+package hr.tvz.biljan.studapp.features.students;
 
+import hr.tvz.biljan.studapp.models.Student;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

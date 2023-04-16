@@ -1,4 +1,4 @@
-package hr.tvz.biljan.studapp;
+package hr.tvz.biljan.studapp.models;
 
 import lombok.Getter;
 import lombok.Setter;

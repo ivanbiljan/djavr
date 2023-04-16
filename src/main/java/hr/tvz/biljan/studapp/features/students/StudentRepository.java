@@ -1,6 +1,6 @@
-package hr.tvz.biljan.studapp;
+package hr.tvz.biljan.studapp.features.students;
 
-import org.springframework.stereotype.Repository;
+import hr.tvz.biljan.studapp.models.Student;
 
 import java.util.List;
 import java.util.Optional;

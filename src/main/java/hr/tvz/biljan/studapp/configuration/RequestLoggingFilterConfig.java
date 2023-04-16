@@ -1,4 +1,4 @@
-package hr.tvz.biljan.studapp;
+package hr.tvz.biljan.studapp.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
