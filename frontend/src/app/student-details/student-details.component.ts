@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { StudentDto, StudentServiceService } from '../student-service.service';
+import { CourseDto, StudentDto, StudentServiceService } from '../student-service.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
@@ -9,6 +9,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class StudentDetailsComponent implements OnInit {
   student: StudentDto | null = null;
+  courses: CourseDto[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +25,7 @@ export class StudentDetailsComponent implements OnInit {
         }
 
         this.studentService.getStudentById(jmbag).subscribe(res => this.student = res);
+        this.studentService.getEnrolledCourses(jmbag).subscribe(res => this.courses = res);
       });
   }
 }

@@ -1,7 +1,6 @@
-package hr.tvz.biljan.studapp.features.students;
+package hr.tvz.biljan.studapp.infrastructure;
 
 import hr.tvz.biljan.studapp.models.Student;
-import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.context.annotation.Primary;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;

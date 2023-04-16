@@ -28,6 +28,11 @@ export interface DeleteStudentRequest {
   uid: string;
 }
 
+export interface CourseDto {
+  name: string;
+  ectsPoints: number;
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -49,6 +54,10 @@ export class StudentServiceService {
 
   getStudentById(uid: string): Observable<StudentDto> {
     return this.httpClient.get<StudentDto>(`${this.studentsUrl}/${uid}`);
+  }
+
+  getEnrolledCourses(uid: string): Observable<CourseDto[]> {
+    return this.httpClient.get<CourseDto[]>(`${this.studentsUrl}/${uid}/courses`);
   }
 
   addStudent(student: InsertStudentRequest): Observable<StudentDto> {

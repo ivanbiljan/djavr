@@ -1,6 +1,7 @@
 package hr.tvz.biljan.studapp.features.students;
 
 import an.awesome.pipelinr.Pipeline;
+import hr.tvz.biljan.studapp.features.courses.CourseDto;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,11 @@ public final class StudentsController {
         pipeline.send(new DeleteStudent.Command(uid));
 
         return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/{uid}/courses")
+    public List<CourseDto> getEnrolledCourses(@PathVariable final String uid) {
+        return pipeline.send(new GetEnrolledCourses.Query(uid));
     }
 
 }

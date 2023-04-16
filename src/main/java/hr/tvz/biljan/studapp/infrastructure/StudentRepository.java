@@ -1,4 +1,4 @@
-package hr.tvz.biljan.studapp.features.students;
+package hr.tvz.biljan.studapp.infrastructure;
 
 import hr.tvz.biljan.studapp.models.Student;
 

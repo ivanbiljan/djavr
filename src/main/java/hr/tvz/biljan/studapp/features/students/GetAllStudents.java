@@ -1,6 +1,7 @@
 package hr.tvz.biljan.studapp.features.students;
 
 import an.awesome.pipelinr.Command;
+import hr.tvz.biljan.studapp.infrastructure.StudentRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

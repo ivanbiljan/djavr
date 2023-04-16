@@ -1,5 +1,5 @@
 insert into student (first_name, last_name, uid, ects_points, date_of_birth) values
-                    ('Ivo', 'Ivic', '0246053232', 120, NOW()),
+                    ('Ivo', 'Ivic', '0246096864', 120, NOW()),
                     ('Pero', 'Ivic', '0246053233', 80, NOW()),
                     ('Pero', 'Peric', '0246053234', 180, NOW());
 

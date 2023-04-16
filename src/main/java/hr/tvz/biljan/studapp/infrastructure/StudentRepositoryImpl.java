@@ -1,7 +1,6 @@
-package hr.tvz.biljan.studapp.features.students;
+package hr.tvz.biljan.studapp.infrastructure;
 
 import hr.tvz.biljan.studapp.models.Student;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;

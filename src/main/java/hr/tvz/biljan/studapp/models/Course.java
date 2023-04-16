@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -23,4 +24,7 @@ public final class Course implements Serializable {
 
     @Column(name = "ects_points")
     private int ectsPoints;
+
+    @ManyToMany(targetEntity = Student.class)
+    private Set enrolledStudents;
 }
