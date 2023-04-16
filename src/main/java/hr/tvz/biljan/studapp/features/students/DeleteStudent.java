@@ -1,16 +1,15 @@
 package hr.tvz.biljan.studapp.features.students;
 
-import an.awesome.pipelinr.Command;
 import an.awesome.pipelinr.Voidy;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
 
 public final class DeleteStudent {
-    public record Request(String jmbag) implements Command<Voidy> {}
+    public record Command(String jmbag) implements an.awesome.pipelinr.Command<Voidy> {}
 
     @Component
-    public static final class Handler implements Command.Handler<Request, Voidy> {
+    public static final class Handler implements Command.Handler<Command, Voidy> {
 
         private final StudentRepository studentRepository;
 
@@ -19,7 +18,7 @@ public final class DeleteStudent {
         }
 
         @Override
-        public Voidy handle(Request request) {
+        public Voidy handle(Command request) {
             var student = studentRepository.findAll().stream().filter(s -> s.getUid().equals(request.jmbag)).findFirst();
             if (!student.isPresent()) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND);

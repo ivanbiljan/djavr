@@ -20,22 +20,22 @@ public final class StudentsController {
 
     @GetMapping
     public List<StudentDto> getAll() {
-        return pipeline.send(new GetAllStudents.Request());
+        return pipeline.send(new GetAllStudents.Query());
     }
 
     @GetMapping("/{uid}")
     public StudentDto getByUid(@PathVariable final String uid) {
-        return pipeline.send(new GetStudentById.Request(uid));
+        return pipeline.send(new GetStudentById.Query(uid));
     }
 
     @PostMapping
-    public StudentDto add(@Valid @RequestBody final CreateStudent.Request request) {
+    public StudentDto add(@Valid @RequestBody final CreateStudent.Command request) {
         return pipeline.send(request);
     }
 
     @DeleteMapping("/{uid}")
     public ResponseEntity delete(@PathVariable final String uid) {
-        pipeline.send(new DeleteStudent.Request(uid));
+        pipeline.send(new DeleteStudent.Command(uid));
 
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }

@@ -8,16 +8,10 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public final class StudentDto {
-    /**
-     * Gets or sets the student's unique identifier.
-     */
     @Getter
     @Setter
     private String uid;
 
-    /**
-     * ?????
-     */
     @Getter
     @Setter
     private int ectsPoints;

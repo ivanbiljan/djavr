@@ -5,15 +5,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 public final class GetStudentById {
 
-    public record Request(String jmbag) implements Command<StudentDto> { }
+    public record Query(String jmbag) implements Command<StudentDto> { }
 
     @Component
-    public static final class Handler implements Command.Handler<Request, StudentDto> {
+    public static final class Handler implements Command.Handler<Query, StudentDto> {
 
         private final StudentRepository studentRepository;
 
@@ -22,7 +19,7 @@ public final class GetStudentById {
         }
 
         @Override
-        public StudentDto handle(Request query) {
+        public StudentDto handle(Query query) {
             var student = this.studentRepository.findStudentByJmbag(query.jmbag).map(s -> StudentDto.fromStudent(s));
             if (!student.isPresent()) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND);

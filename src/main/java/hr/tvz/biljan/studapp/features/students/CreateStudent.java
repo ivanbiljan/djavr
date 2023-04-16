@@ -1,6 +1,5 @@
 package hr.tvz.biljan.studapp.features.students;
 
-import an.awesome.pipelinr.Command;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import hr.tvz.biljan.studapp.models.Student;
 import jakarta.validation.constraints.*;
@@ -12,7 +11,7 @@ import java.time.LocalDate;
 
 public final class CreateStudent {
 
-    public record Request(
+    public record Command(
             @NotBlank(message = "First name must not be empty")
             String firstName,
             @NotBlank(message = "Last name must not be empty")
@@ -27,12 +26,12 @@ public final class CreateStudent {
             @Max(value = 300, message = "ECTS points must not exceed 300")
             int ectsPoints
 
-    ) implements Command<StudentDto>
+    ) implements an.awesome.pipelinr.Command<StudentDto>
     {
     }
 
     @Component
-    public static final class Handler implements Command.Handler<Request, StudentDto> {
+    public static final class Handler implements Command.Handler<Command, StudentDto> {
 
         private final StudentRepository studentRepository;
 
@@ -41,7 +40,7 @@ public final class CreateStudent {
         }
 
         @Override
-        public StudentDto handle(Request query) {
+        public StudentDto handle(Command query) {
             if (studentRepository.findAll().stream().anyMatch(s -> s.getUid().equals(query.uid))) {
                 throw new ResponseStatusException(HttpStatus.CONFLICT);
             }

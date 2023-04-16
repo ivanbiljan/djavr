@@ -1,47 +1,36 @@
 package hr.tvz.biljan.studapp.models;
 
+import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
-/**
- * Represents a student.
- */
+@Getter
+@Setter
+@Entity
+@Table(name = "course")
+@NoArgsConstructor
 public final class Student {
-    /**
-     * Gets or sets the first name.
-     */
-    @Getter
-    @Setter
+    @Id
+    @Column(name = "id")
+    @GeneratedValue
+    private Integer id;
+
+    @Column(name = "first_name")
     private String firstName;
 
-    /**
-     * Gets or sets the last name.
-     */
-    @Getter
-    @Setter
+    @Column(name = "last_name")
     private String lastName;
 
-    /**
-     * Gets or sets the date of birth.
-     */
-    @Getter
-    @Setter
+    @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
-    /**
-     * Gets or sets the student's unique identifier.
-     */
-    @Getter
-    @Setter
+    @Column(name = "uid")
     private String uid;
 
-    /**
-     * ?????
-     */
-    @Getter
-    @Setter
+    @Column(name = "ects_points")
     private int ectsPoints;
 
     public Student(String firstName, String lastName, LocalDate dateOfBirth, String uid, int ectsPoints) {

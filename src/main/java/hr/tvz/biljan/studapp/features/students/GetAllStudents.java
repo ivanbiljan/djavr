@@ -8,10 +8,10 @@ import java.util.stream.Collectors;
 
 public final class GetAllStudents {
 
-    public record Request() implements Command<List<StudentDto>> { }
+    public record Query() implements Command<List<StudentDto>> { }
 
     @Component
-    public static final class Handler implements Command.Handler<Request, List<StudentDto>> {
+    public static final class Handler implements Command.Handler<Query, List<StudentDto>> {
 
         private final StudentRepository studentRepository;
 
@@ -20,7 +20,7 @@ public final class GetAllStudents {
         }
 
         @Override
-        public List<StudentDto> handle(Request query) {
+        public List<StudentDto> handle(Query query) {
             return this.studentRepository.findAll().stream().map(s -> StudentDto.fromStudent(s)).collect(Collectors.toList());
         }
 

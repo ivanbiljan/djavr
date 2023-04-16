@@ -1,6 +1,7 @@
 package hr.tvz.biljan.studapp.features.students;
 
 import hr.tvz.biljan.studapp.models.Student;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public final class StudentRepositoryImpl implements StudentRepository {
+public class StudentRepositoryImpl implements StudentRepository {
     private static final List<Student> STUDENTS = new ArrayList<>(Arrays.asList(
             new Student("Ivan", "Biljan", LocalDate.of(2001, 9, 22), "0246096864", 180),
             new Student("Luka", "Ratković", LocalDate.of(1991, 9, 22), "0347092814", 60),
@@ -37,3 +38,4 @@ public final class StudentRepositoryImpl implements StudentRepository {
         STUDENTS.remove(student);
     }
 }
+
