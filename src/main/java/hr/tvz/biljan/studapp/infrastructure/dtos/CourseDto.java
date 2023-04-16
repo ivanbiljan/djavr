@@ -1,4 +1,4 @@
-package hr.tvz.biljan.studapp.features.courses;
+package hr.tvz.biljan.studapp.infrastructure.dtos;
 
 import hr.tvz.biljan.studapp.models.Course;
 

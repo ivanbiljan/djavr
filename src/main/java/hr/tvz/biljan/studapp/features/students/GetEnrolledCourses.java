@@ -1,8 +1,8 @@
 package hr.tvz.biljan.studapp.features.students;
 
 import an.awesome.pipelinr.Command;
-import hr.tvz.biljan.studapp.features.courses.CourseDto;
-import hr.tvz.biljan.studapp.infrastructure.CourseRepository;
+import hr.tvz.biljan.studapp.infrastructure.dtos.CourseDto;
+import hr.tvz.biljan.studapp.infrastructure.persistence.CourseRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

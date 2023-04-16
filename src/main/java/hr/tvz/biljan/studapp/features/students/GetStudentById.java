@@ -1,7 +1,8 @@
 package hr.tvz.biljan.studapp.features.students;
 
 import an.awesome.pipelinr.Command;
-import hr.tvz.biljan.studapp.infrastructure.StudentRepository;
+import hr.tvz.biljan.studapp.infrastructure.dtos.StudentDto;
+import hr.tvz.biljan.studapp.infrastructure.persistence.StudentRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;

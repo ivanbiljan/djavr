@@ -1,4 +1,4 @@
-package hr.tvz.biljan.studapp.infrastructure;
+package hr.tvz.biljan.studapp.infrastructure.persistence;
 
 import hr.tvz.biljan.studapp.models.Student;
 import org.springframework.stereotype.Repository;

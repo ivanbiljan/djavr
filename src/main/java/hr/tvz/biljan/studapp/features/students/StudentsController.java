@@ -1,7 +1,8 @@
 package hr.tvz.biljan.studapp.features.students;
 
 import an.awesome.pipelinr.Pipeline;
-import hr.tvz.biljan.studapp.features.courses.CourseDto;
+import hr.tvz.biljan.studapp.infrastructure.dtos.CourseDto;
+import hr.tvz.biljan.studapp.infrastructure.dtos.StudentDto;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

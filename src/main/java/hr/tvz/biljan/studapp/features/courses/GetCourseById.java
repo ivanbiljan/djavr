@@ -1,7 +1,8 @@
 package hr.tvz.biljan.studapp.features.courses;
 
 import an.awesome.pipelinr.Command;
-import hr.tvz.biljan.studapp.infrastructure.CourseRepository;
+import hr.tvz.biljan.studapp.infrastructure.dtos.CourseDto;
+import hr.tvz.biljan.studapp.infrastructure.persistence.CourseRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;

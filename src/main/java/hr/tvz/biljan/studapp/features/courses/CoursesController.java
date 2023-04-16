@@ -1,6 +1,7 @@
 package hr.tvz.biljan.studapp.features.courses;
 
 import an.awesome.pipelinr.Pipeline;
+import hr.tvz.biljan.studapp.infrastructure.dtos.CourseDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

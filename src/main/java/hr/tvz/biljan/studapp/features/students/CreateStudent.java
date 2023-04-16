@@ -1,7 +1,8 @@
 package hr.tvz.biljan.studapp.features.students;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import hr.tvz.biljan.studapp.infrastructure.StudentRepository;
+import hr.tvz.biljan.studapp.infrastructure.dtos.StudentDto;
+import hr.tvz.biljan.studapp.infrastructure.persistence.StudentRepository;
 import hr.tvz.biljan.studapp.models.Student;
 import jakarta.validation.constraints.*;
 import org.springframework.http.HttpStatus;
