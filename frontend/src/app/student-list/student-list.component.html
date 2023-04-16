@@ -1,10 +1,41 @@
 <h2>Popis studenata</h2>
 <ul class="students">
     <li *ngFor="let student of students"
-        (click)="onSelect(student)"
-        [class.selected]="student === selectedStudent">
-        <span class="badge">{{student.jmbag}}</span> {{student.numberOfEcts}} ECTS
+        (click)="onSelect(student)">
+        <span class="badge" [routerLink]="['/students', student.uid]">{{student.uid}}</span> {{student.ectsPoints}} ECTS
+        <button (click)="delete(student)">Delete</button>
     </li>
 </ul>
 
-<app-student-details [student]="selectedStudent"></app-student-details>
+<div>
+    <h3>Unesi novog studenta</h3>
+    <div>
+        <label>JMBAG:
+            <div>
+                <input #studentJmbag/>
+            </div>
+        </label>
+    </div>
+    <div>
+        <label>Ime:
+            <div>
+                <input #studentFirstName />
+            </div>
+        </label>
+    </div>
+    <div>
+        <label>Prezime:
+            <div>
+                <input #studentLastName/>
+            </div>
+        </label>
+    </div>
+    <div>
+        <label>Broj ECTSa:
+            <div>
+                <input type="number" #sutdentEcts/>
+            </div>
+        </label>
+    </div>
+    <button (click)="add(studentFirstName.value, studentLastName.value, studentJmbag.value, +sutdentEcts.value); studentFirstName.value=''; studentLastName.value=''; studentJmbag.value=''; sutdentEcts.value=''">Unesi studenta</button>
+</div>

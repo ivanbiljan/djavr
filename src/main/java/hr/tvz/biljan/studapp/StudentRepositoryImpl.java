@@ -23,7 +23,7 @@ public final class StudentRepositoryImpl implements StudentRepository {
 
     @Override
     public Optional<Student> findStudentByJmbag(String jmbag) {
-        return STUDENTS.stream().filter(s -> s.getUid() == jmbag).findFirst();
+        return STUDENTS.stream().filter(s -> s.getUid().equals(jmbag)).findFirst();
     }
 
     @Override
