@@ -37,6 +37,18 @@ public final class Student {
     @ManyToMany(targetEntity = Course.class)
     private Set courses;
 
+    @Column(name = "address_line_1")
+    private String addressLine1;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name= "country")
+    private String country;
+
+    @Column(name = "zip_code")
+    private String zipCode;
+
     public Student(String firstName, String lastName, LocalDate dateOfBirth, String uid, int ectsPoints) {
         this.firstName = firstName;
         this.lastName = lastName;

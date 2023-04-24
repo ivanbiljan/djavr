@@ -33,6 +33,14 @@ export interface CourseDto {
   ectsPoints: number;
 }
 
+export interface GetStudentDetailsResponse {
+  jmbag: string;
+  firstName: string;
+  lastName: string;
+  ectsPoints: number;
+  dateOfBirth: Date;
+}
+
 
 @Injectable({
   providedIn: 'root'

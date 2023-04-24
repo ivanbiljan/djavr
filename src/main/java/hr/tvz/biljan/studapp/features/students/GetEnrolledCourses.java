@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// ZADATAK SA LABOSA
+
 public final class GetEnrolledCourses {
     public record Query(String uid) implements Command<List<CourseDto>> { }
 

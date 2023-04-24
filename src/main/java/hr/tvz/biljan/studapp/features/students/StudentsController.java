@@ -1,6 +1,7 @@
 package hr.tvz.biljan.studapp.features.students;
 
 import an.awesome.pipelinr.Pipeline;
+import hr.tvz.biljan.studapp.infrastructure.dtos.AddressDto;
 import hr.tvz.biljan.studapp.infrastructure.dtos.CourseDto;
 import hr.tvz.biljan.studapp.infrastructure.dtos.StudentDto;
 import jakarta.validation.Valid;
@@ -28,6 +29,16 @@ public final class StudentsController {
     @GetMapping("/{uid}")
     public StudentDto getByUid(@PathVariable final String uid) {
         return pipeline.send(new GetStudentById.Query(uid));
+    }
+
+    @GetMapping("/{uid}/details")
+    public GetStudentDetails.Dto getDetailsByUid(@PathVariable final String uid) {
+        return pipeline.send(new GetStudentDetails.Query(uid));
+    }
+
+    @GetMapping("/{uid}/details/address")
+    public AddressDto getStudentAddressByStudentUid(@PathVariable final String uid) {
+        return pipeline.send(new GetStudentAddress.Query(uid));
     }
 
     @PostMapping
