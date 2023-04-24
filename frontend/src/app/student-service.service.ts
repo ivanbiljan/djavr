@@ -39,6 +39,14 @@ export interface GetStudentDetailsResponse {
   lastName: string;
   ectsPoints: number;
   dateOfBirth: Date;
+  hasToPayTuition: boolean;
+}
+
+export interface GetStudentAddressResponse {
+  addressLine1: string;
+  city: string;
+  country: string;
+  zipCode: string;
 }
 
 
@@ -60,8 +68,12 @@ export class StudentServiceService {
     return this.httpClient.get<StudentDto[]>(this.studentsUrl);
   }
 
-  getStudentById(uid: string): Observable<StudentDto> {
-    return this.httpClient.get<StudentDto>(`${this.studentsUrl}/${uid}`);
+  getStudentById(uid: string): Observable<GetStudentDetailsResponse> {
+    return this.httpClient.get<GetStudentDetailsResponse>(`${this.studentsUrl}/${uid}/details`);
+  }
+
+  getStudentAddress(uid: string): Observable<GetStudentAddressResponse> {
+    return this.httpClient.get<GetStudentAddressResponse>(`${this.studentsUrl}/${uid}/details/address`)
   }
 
   getEnrolledCourses(uid: string): Observable<CourseDto[]> {

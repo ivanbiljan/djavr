@@ -1,6 +1,9 @@
 <div *ngIf="student">
-    <h2>{{student.uid}} - detalji studenta</h2>
-    <div><span>JMBAG: </span>{{student.uid}}</div>
+    <h2>{{student.jmbag}} - detalji studenta</h2>
+    <div><span>JMBAG: </span>{{student.jmbag}}</div>
+    <div><span>Ime: </span>{{student.firstName}}</div>
+    <div><span>Prezime: </span>{{student.lastName}}</div>
+    <div *ngIf="address"><span>Adresa: </span> {{address.addressLine1}}, {{address.city}} ({{address.zipCode}})</div>
     <div><span>Broj ECTS bodova: </span>{{student.ectsPoints}}</div>
     <div *ngIf="student.hasToPayTuition">Student treba platiti Skolarinu.</div>
 </div>

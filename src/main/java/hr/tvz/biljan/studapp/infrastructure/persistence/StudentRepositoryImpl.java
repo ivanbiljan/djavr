@@ -1,5 +1,6 @@
 package hr.tvz.biljan.studapp.infrastructure.persistence;
 
+import hr.tvz.biljan.studapp.infrastructure.dtos.AddressDto;
 import hr.tvz.biljan.studapp.models.Student;
 import org.springframework.stereotype.Repository;
 
@@ -25,6 +26,11 @@ public class StudentRepositoryImpl implements StudentRepository {
     @Override
     public Optional<Student> findStudentByJmbag(String jmbag) {
         return STUDENTS.stream().filter(s -> s.getUid().equals(jmbag)).findFirst();
+    }
+
+    @Override
+    public Optional<AddressDto> findAddressByJmbag(String jmbag) {
+        return Optional.empty();
     }
 
     @Override

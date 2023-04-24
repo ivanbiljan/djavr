@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CourseDto, StudentDto, StudentServiceService } from '../student-service.service';
+import { CourseDto, GetStudentAddressResponse, GetStudentDetailsResponse, StudentDto, StudentServiceService } from '../student-service.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
@@ -8,7 +8,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./student-details.component.scss']
 })
 export class StudentDetailsComponent implements OnInit {
-  student: StudentDto | null = null;
+  student: GetStudentDetailsResponse | null = null;
+  address: GetStudentAddressResponse | null = null;
   courses: CourseDto[] = [];
 
   constructor(
@@ -25,6 +26,7 @@ export class StudentDetailsComponent implements OnInit {
         }
 
         this.studentService.getStudentById(jmbag).subscribe(res => this.student = res);
+        this.studentService.getStudentAddress(jmbag).subscribe(res => this.address = res);
         this.studentService.getEnrolledCourses(jmbag).subscribe(res => this.courses = res);
       });
   }
