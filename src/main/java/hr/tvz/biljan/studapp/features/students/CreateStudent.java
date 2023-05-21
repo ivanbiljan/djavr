@@ -48,7 +48,7 @@ public final class CreateStudent {
             }
 
             var student = new Student(query.firstName, query.lastName, query.dateOfBirth, query.uid, query.ectsPoints);
-            studentRepository.addStudent(student);
+            studentRepository.save(student);
 
             return StudentDto.fromStudent(student);
         }

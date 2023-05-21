@@ -25,7 +25,7 @@ public final class DeleteStudent {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND);
             }
 
-            studentRepository.removeStudent(student.get());
+            studentRepository.delete(student.get());
 
             return new Voidy();
         }

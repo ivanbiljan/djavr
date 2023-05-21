@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const SERVER_API_URL = 'http://localhost:8080';","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

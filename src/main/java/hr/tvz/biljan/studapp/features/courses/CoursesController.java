@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "courses", produces = "application/json")
+@RequestMapping(value = "course", produces = "application/json")
 public final class CoursesController {
     private final Pipeline pipeline;
 

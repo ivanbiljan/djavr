@@ -22,7 +22,7 @@ public final class GetStudentById {
 
         @Override
         public StudentDto handle(Query query) {
-            var student = this.studentRepository.findStudentByJmbag(query.jmbag).map(s -> StudentDto.fromStudent(s));
+            var student = this.studentRepository.findStudentByUid(query.jmbag).map(s -> StudentDto.fromStudent(s));
             if (!student.isPresent()) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND);
             }

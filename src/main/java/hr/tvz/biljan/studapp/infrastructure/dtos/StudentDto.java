@@ -7,8 +7,8 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public record StudentDto(String uid, int ectsPoints, Boolean hasToPayTuition) {
+public record StudentDto(String firstName, String lastName, String jmbag, int numberOfECTS, boolean tuitionShouldBePaid) {
     public static StudentDto fromStudent(Student student) {
-        return new StudentDto(student.getUid(), student.getEctsPoints(), ChronoUnit.YEARS.between(student.getDateOfBirth(), LocalDate.now()) >= 26);
+        return new StudentDto(student.getFirstName(), student.getLastName(), student.getUid(), student.getEctsPoints(), ChronoUnit.YEARS.between(student.getDateOfBirth(), LocalDate.now()) >= 26);
     }
 }

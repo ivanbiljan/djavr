@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "students", produces = "application/json")
+@RequestMapping(value = "student", produces = "application/json")
 public final class StudentsController {
 
     private final Pipeline pipeline;

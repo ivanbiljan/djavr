@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var Authority = /*#__PURE__*/(() => {\n  Authority = Authority || {};\n  Authority[\"ADMIN\"] = \"ROLE_ADMIN\";\n  Authority[\"USER\"] = \"ROLE_USER\";\n  return Authority;\n})();","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
