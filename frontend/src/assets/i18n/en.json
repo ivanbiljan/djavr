@@ -1,0 +1,38 @@
+{
+    "navbar": {
+        "username": "Username",
+        "role": "Role",
+        "logout": "Logout"
+    },
+    "students": {
+        "list": {
+            "listOfStudents": "List of Students",
+            "addNewStudent": "Add New Student",
+            "name": "Name",
+            "surname": "Surname",
+            "jmbag": "JMBAG",
+            "ECTS": "ECTS",
+            "details": "Details",
+            "edit": "Edit",
+            "delete": "Delete"
+        },
+        "detail": {
+            "detailsCard": {
+                "header": "Student Details"
+            },
+            "coursesCard": {
+                "header": "Courses Enrolled by Student"
+            },
+            "back": "Back to Student List"
+        },
+        "edit": {
+            "name": "Name",
+            "surname": "Surname",
+            "jmbag": "JMBAG",
+            "ECTS": "Number of ECTS Credits",
+            "tuitionShouldBePaid": "The student has to pay tuition",
+            "noCourses": "The student has not enrolled into any courses",
+            "back": "Back to Student List"
+        }
+    }
+}

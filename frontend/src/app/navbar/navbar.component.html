@@ -16,7 +16,7 @@
             <ul class="navbar-nav" *ngIf="isUserLoggedIn()">
                 <li class="nav-item">
                     <a class="nav-link cursor-pointer">
-                        <span>Korisničko ime: {{userService?.currentUser?.username}}</span>
+                        <span>{{'navbar.username' | translate}}: {{userService?.currentUser?.username}}</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -26,8 +26,17 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link cursor-pointer">
-                        <span>Uloga: <span *ngFor="let role of userService?.currentUser?.authorities">{{role}} </span></span>
+                        <span>{{'navbar.role' | translate}}: <span *ngFor="let role of userService?.currentUser?.authorities">{{role}} </span></span>
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cursor-pointer">
+                        <span>|</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button (click)="useLanguage('en')">en</button>
+                    <button (click)="useLanguage('hr')">hr</button>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link cursor-pointer">
@@ -36,7 +45,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link cursor-pointer" id="logout" (click)="logout()">
-                        <span> Odjava</span>
+                        <span> {{'navbar.logout' | translate}}</span>
                     </a>
                 </li>
             </ul>

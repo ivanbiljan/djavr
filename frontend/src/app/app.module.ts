@@ -19,9 +19,15 @@ import { StudentFormComponent } from './students/student-form/student-form.compo
 import { StudentCreateComponent } from './students/student-create/student-create.component';
 import { StudentEditComponent } from './students/student-edit/student-edit.component';
 import { ToastrModule } from 'ngx-toastr';
+import {HttpClient} from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -44,7 +50,17 @@ import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.componen
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    TranslateModule.forRoot(
+      {
+      loader: {
+      provide: TranslateLoader,
+      useFactory: createTranslateLoader,
+      deps: [HttpClient]
+      },
+      defaultLanguage: 'hr'
+      }
+      )
   ],
   providers: [
     {

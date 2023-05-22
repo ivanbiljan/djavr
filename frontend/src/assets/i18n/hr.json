@@ -1,0 +1,39 @@
+{
+    "navbar": {
+        "username": "Korisnicko ime",
+        "role": "Uloga",
+        "logout": "Odjava"
+    },
+
+    "students": {
+        "list": {
+            "listOfStudents": "Popis studenata",
+            "addNewStudent": "Dodaj novog studenta",
+            "name": "Ime",
+            "surname": "Prezime",
+            "jmbag": "JMBAG",
+            "ECTS": "ECTS",
+            "details": "Detalji",
+            "edit": "Uredivanje",
+            "delete": "Brisanje"
+        },
+        "detail": {
+            "detailsCard": {
+                "header": "Detalji studenta"
+            },
+            "coursesCard": {
+                "header": "Kolegiji na koje je student upisan"
+            },
+            "back": "Povratak na pregled studenata"
+        },
+        "edit": {
+            "name": "Ime",
+            "surname": "Prezime",
+            "jmbag": "JMBAG",
+            "ECTS": "Broj ECTS bodova",
+            "tuitionShouldBePaid": "Student treba platiti školarinu",
+            "noCourses": "Student nema upisanih kolegija",
+            "back": "Povratak na pregled studenata"
+        }
+    }
+}
