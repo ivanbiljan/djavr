@@ -21,8 +21,8 @@ class Job extends QuartzJobBean {
 
     @Override
     protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
-        List<Student> hardwareList = studentRepository.findAll();
-        for (var student : hardwareList) {
+        List<Student> studentList = studentRepository.findAll();
+        for (var student : studentList) {
             System.out.println(student.getFirstName() + " " + student.getLastName());
         }
     }
@@ -31,21 +31,21 @@ class Job extends QuartzJobBean {
 @Configuration
 public class SchedulerConfiguration {
     @Bean
-    public JobDetail hardwareListJobBuilder() {
+    public JobDetail studentListJobBuilder() {
         return JobBuilder.newJob(Job.class)
-                .withIdentity("hardwareListJob")
+                .withIdentity("studentListJob")
                 .storeDurably()
                 .build();
     }
 
     @Bean
-    public Trigger hardwareListJobTrigger() {
+    public Trigger studentListJobTrigger() {
         SimpleScheduleBuilder scheduleBuilder =
                 SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(10).repeatForever();
 
         return TriggerBuilder.newTrigger()
-                .forJob(hardwareListJobBuilder())
-                .withIdentity("hardwareListTrigger")
+                .forJob(studentListJobBuilder())
+                .withIdentity("studentListTrigger")
                 .withSchedule(scheduleBuilder)
                 .build();
     }
