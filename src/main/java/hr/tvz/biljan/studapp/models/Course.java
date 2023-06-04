@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -25,6 +26,11 @@ public final class Course implements Serializable {
     @Column(name = "ects_points")
     private int ectsPoints;
 
-    @ManyToMany(targetEntity = Student.class)
-    private Set enrolledStudents;
+    @ManyToMany
+    @JoinTable(
+            name = "student_course",
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id")
+    )
+    private Set<Student> enrolledStudents = new HashSet<>();
 }

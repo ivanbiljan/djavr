@@ -1,7 +1,8 @@
-package hr.tvz.biljan.studapp.configuration;
+package hr.tvz.biljan.studapp.infrastructure.security;
 
 import hr.tvz.biljan.studapp.infrastructure.security.jwt.JwtAuthenticationEntryPoint;
 import hr.tvz.biljan.studapp.infrastructure.security.jwt.JwtFilter;
+import hr.tvz.biljan.studapp.infrastructure.security.jwt.TokenProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -20,6 +21,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration {
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     private final JwtFilter jwtFilter;
@@ -40,6 +42,7 @@ public class SecurityConfiguration {
                                 .requestMatchers("/h2-console").permitAll()
                                 .requestMatchers("/h2-console/**").permitAll()
                                 .requestMatchers("/api/authenticate").permitAll()
+                                .requestMatchers("/course/**").permitAll()
                                 .requestMatchers(HttpMethod.POST).hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PUT).hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")
@@ -59,4 +62,5 @@ public class SecurityConfiguration {
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers(new AntPathRequestMatcher("/h2-console/**"));
     }
+
 }
